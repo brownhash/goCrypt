@@ -66,5 +66,18 @@ Optional Arguments:
 1) -k (encryption key): 
           gocrypt -w filename -k encryption_key
           gocrypt -r filename -k encryption_key
-   if -k is not provided then the default key is used
+   if key is not provided then the default key is used
+
+2) -f (file name of file containing encryption key)
+          gocrypt -w filename -f /home/username/encryptionkey.json
+          gocrypt -r filename -f /home/username/encryptionkey.json
+```
+
+Writing keys in file, while using `-f` option: <br />
+The file should be a valid json file with a key value pair where both key and value are strings.
+
+```shell script
+{
+    "key": "MyENCRYptionkey123"
+}
 ```

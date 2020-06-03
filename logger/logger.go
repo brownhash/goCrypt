@@ -21,6 +21,9 @@ Optional Arguments:
           gocrypt -w filename -k encryption_key
           gocrypt -r filename -k encryption_key
    if key is not provided then the default key is used
+2) -f (file name of file containing encryption key)
+          gocrypt -w filename -f <path to json file>
+          gocrypt -r filename -f <path to json file>
 `
 )
 

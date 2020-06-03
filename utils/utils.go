@@ -1,6 +1,7 @@
 package utils
 
 import (
+	"encoding/json"
 	"errors"
 	"io/ioutil"
 	"os/exec"
@@ -57,6 +58,26 @@ func ArgParse(args []string) ([]string, error) {
 				} else {
 					key := args[4]
 					return []string{option, filename, key}, nil
+				}
+			} else if keyOpt == "-f" {
+				if len(args) == 4 {
+					return []string{option, filename, ""}, errors.New("no file name supplied ")
+				} else {
+					confFile := args[4]
+					keyConfig, err := ReadFromFile(confFile)
+
+					if err != nil {
+						return []string{"", "", ""}, errors.New(err.Error())
+					}
+
+					keyModal := make(map[string]string, 0)
+					err = json.Unmarshal(keyConfig, &keyModal)
+
+					if err != nil {
+						return []string{"", "", ""}, errors.New(err.Error())
+					}
+
+					return []string{option, filename, keyModal["key"]}, nil
 				}
 			} else { // throws error if supplied options are not recognised
 				return []string{"", "", ""}, errors.New("invalid option, use -h to see available options ")
