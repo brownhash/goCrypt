@@ -2,6 +2,10 @@
 A layer above your regular terminal editor to write/edit/read encrypted files
 
 ### Usage
+Set your preferred terminal editor as an environment variable, else it will use `vim`
+```shell script
+export EDITOR='<name of preferd editor>'
+```
 ```shell script
 git clone https://github.com/sharma1612harshit/goCrypt
 cd goCrypt
