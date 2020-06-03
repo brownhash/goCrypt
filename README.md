@@ -10,7 +10,7 @@ go run main.go [options]
 
 ### Building Executables
 ```shell script
-git clone https://github.com/sharma1612harshit/goCrypt -b v1.0.0-binaries
+git clone https://github.com/sharma1612harshit/goCrypt -b <latest tag>-binaries
 
 Here the directories are of the form (os-architecture)
 choose your os and architecture and use the precompiled binary
