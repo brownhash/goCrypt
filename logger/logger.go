@@ -43,6 +43,11 @@ func Info(message string) {
 	fmt.Printf(InfoColor, message)
 }
 
+// logs stdout
+func Output(message string) {
+	fmt.Printf(message)
+}
+
 // logs help context as a warning
 func Help() {
 	Warning(HelpText)

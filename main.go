@@ -55,7 +55,7 @@ func main() {
 				logger.Critical(err.Error())
 			}
 
-			logger.Info(string(Decrypted))
+			logger.Output(string(Decrypted))
 
 			logger.Critical(err.Error())
 		}
@@ -79,6 +79,6 @@ func main() {
 			logger.Critical(err.Error())
 		}
 
-		logger.Info(string(Decrypted))
+		logger.Output(string(Decrypted))
 	}
 }
