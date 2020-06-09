@@ -1,4 +1,4 @@
 .idea
 *.logs
-*.test
+test*
 build*
