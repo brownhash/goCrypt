@@ -4,6 +4,7 @@ import (
 	"encoding/json"
 	"errors"
 	"io/ioutil"
+	"os"
 	"os/exec"
 	"strings"
 )
@@ -90,3 +91,13 @@ func ArgParse(args []string) ([]string, error) {
 		return []string{"", "", ""}, errors.New("invalid option, use -h to see available options ")
 	}
 }
+
+// checks if the file name provided exists or not
+func FileExists(filename string) bool {
+	info, err := os.Stat(filename)
+	if os.IsNotExist(err) {
+		return false
+	}
+	return !info.IsDir()
+}
+
