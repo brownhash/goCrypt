@@ -6,6 +6,7 @@ import (
 	"crypto/md5"
 	"crypto/rand"
 	"encoding/hex"
+	"encoding/base64"
 	"io"
 )
 
@@ -36,11 +37,18 @@ func Encrypt(data []byte, encryptionKey string) ([]byte, error) {
 
 	cipherText := gcm.Seal(nonce, nonce, data, nil)
 
-	return cipherText, nil
+	encodedCipher := base64.StdEncoding.EncodeToString(cipherText)
+
+	return []byte(encodedCipher), nil
 }
 
 // decrypts the provided data using the provided encryptionKey
-func Decrypt(data []byte, encryptionKey string) ([]byte, error) {
+func Decrypt(encodedCipher []byte, encryptionKey string) ([]byte, error) {
+	data, err := base64.StdEncoding.DecodeString(string(encodedCipher))
+	if err != nil {
+		return []byte{}, err
+	}
+
 	key := []byte(CreateHash(encryptionKey))
 
 	block, err := aes.NewCipher(key)
