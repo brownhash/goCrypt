@@ -12,10 +12,12 @@ cd goCrypt
 go run main.go [options]
 ```
 
-### Docker Image
+### [Docker Image](https://hub.docker.com/r/sharma1612harshit/gocrypt)
 ```shell script
 docker pull sharma1612harshit/gocrypt:1.4.0
 [or]
+git clone https://github.com/sharma1612harshit/goCrypt
+cd goCrypt
 docker build --tag gocrypt .
 
 docker run -it -v <localpath>:/tmp/ gocrypt [option] /tmp/<filename> -k <encryption key>
