@@ -22,6 +22,7 @@ git clone https://github.com/sharma1612harshit/goCrypt
 cd goCrypt
 docker build --tag gocrypt .
 ```
+then,
 ```shell script
 docker run -it -v <localpath>:/tmp/ gocrypt [option] /tmp/<filename> -k <encryption key>
 ```
