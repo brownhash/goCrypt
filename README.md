@@ -14,7 +14,7 @@ go run main.go [options]
 
 ### [Docker Image](https://hub.docker.com/r/sharma1612harshit/gocrypt)
 ```shell script
-docker pull sharma1612harshit/gocrypt:1.4.0
+docker pull sharma1612harshit/gocrypt
 ```
 or
 ```shell script
